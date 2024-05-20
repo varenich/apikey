@@ -21,6 +21,8 @@ class ApiKey {
         $this->_configPath = $configPath;
 
         $jsonconfigstr = file_get_contents($configPath);
+        if (!$jsonconfigstr) throw new \Exception('Keys file reading error', 500);
+
         $jsonconfig = json_decode($jsonconfigstr,true);
 
         $this->_keys = @$jsonconfig["apiKeys"];
@@ -41,7 +43,7 @@ class ApiKey {
             if (in_array($keyToCheck, $res) ) return true;
             throw new \Exception('Access denied', 403);
         }
-        throw new \Exception('Key storage is empty. Check the path to config');
+        throw new \Exception('Key storage is empty. Check the path to config', 500);
     } // check
 } // class
 ?>
