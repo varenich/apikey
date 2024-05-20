@@ -16,6 +16,13 @@ class ApiKey {
     Creates an object, loads keys from JSON file located at configPath
 
     configPath : string - Path to JSON file of API keys
+
+    Config file example:
+    {
+        "permission_name": [
+            {"consumer_name" : "APIKeyValue"}
+        ]
+    }
     */
     public function __construct($configPath='') {
         $this->_configPath = $configPath;
