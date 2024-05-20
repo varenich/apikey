@@ -41,7 +41,7 @@ class ApiKey {
             if (in_array($keyToCheck, $res) ) return true;
             throw new \Exception('Access denied', 403);
         }
-        throw new \Exception('Key storege is empty. Check the path to config');
+        throw new \Exception('Key storage is empty. Check the path to config');
     } // check
 } // class
 ?>
