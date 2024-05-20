@@ -1,6 +1,13 @@
 <?php
 namespace apikey\v1;
 
+/*
+Loads JSON file with keys and the checks if given key contained in keys array
+
+@Author Evgeniy Panin
+@Email varenich@gmail.com
+*/
+
 class ApiKey {
     private $_configPath;
     private $_keys;
